@@ -1,0 +1,30 @@
+{
+  "name": "paymo-late-fee-adder",
+  "version": "1.2.1",
+  "description": "A node.js script designed to add monthly recurring late fees to all overdue and unpaid paymo invoices.",
+  "main": "app.js",
+  "dependencies": {
+    "moment": "^2.17.1",
+    "request": "^2.81.0",
+    "winston": "^2.3.1",
+    "winston-daily-rotate-file": "^1.4.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://JhOnNeY@bitbucket.org/JhOnNeY/paymo-late-fee-adder.git"
+  },
+  "keywords": [
+    "paymo",
+    "late",
+    "fee",
+    "charge",
+    "script"
+  ],
+  "author": "Jonathan Waters",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/JhOnNeY/paymo-late-fee-adder#readme"
+}

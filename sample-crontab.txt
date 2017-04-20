@@ -1,0 +1,5 @@
+﻿# the below runs the script once every day at 11:55 PM on your server's time.
+# please note that your server may be running on a different time zone.
+# you may need to run this script with root crontab
+#
+# 55 23 * * * cd /path/to/script/directory/ && node ./app.js
