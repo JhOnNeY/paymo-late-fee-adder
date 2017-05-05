@@ -23,7 +23,7 @@ However, I HIGHLY RECOMMEND TESTING THIS SCRIPT BEFORE LIVE EXECUTION AS IT MAY 
 4. Edit app.js; insert your Paymo API key or username and password in the [corresponding fields](https://github.com/JhOnNeY/paymo-late-fee-adder/blob/master/app.js#L46-L47)
 5. Run the script by entering the command `node app.js`
 
-To run a crontab (re-occurring daily/monthly/etc...), follow the instructions in sample-crontab.txt
+To run a crontab (re-occurring daily/monthly/etc...), use the example in [sample-crontab.txt](https://github.com/JhOnNeY/paymo-late-fee-adder/blob/master/sample-crontab.txt) and follow the instructions [here](http://kvz.io/blog/2007/07/29/schedule-tasks-on-linux-using-crontab/) to set it up.
 
 
 #### NOTE: specifically all overdue invoices with the status of draft, sent, or viewed, 1 day after the invoice due date a recurring* monthly finance charge is added to the invoice. 
