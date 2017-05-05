@@ -6,12 +6,12 @@
 
 ## How do I get set up? ##
 
-###For a Detailed How-To-Install please head over to [this](https://www.legendwebsolutions.com/blog/auto-add-late-fees-to-paymo-invoices) instructional blog post.
+### For a Detailed How-To-Install please head over to [this](https://www.legendwebsolutions.com/blog/auto-add-late-fees-to-paymo-invoices) instructional blog post.
 
-###Fast Track Install
+### Fast Track Install
 We will be using [Node.js](https://nodejs.org/en/) to run the script and a [crontab](http://www.computerhope.com/unix/ucrontab.htm) to run it effortlessly every night.
 
-or those of you who know their way around git, node, and paymo:
+For those of you who know their way around git, node, and paymo:
 
 First off, If you want to run this script without testing, then all you need is these first five steps.
 
