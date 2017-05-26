@@ -93,7 +93,7 @@ var getApiSingleInvoices = function(invoice_id, callback) {
     logger.debug("__API__doing API request: GET single invoices");
 
     request.get(
-        paymoApi + "/invoices/" + invoice_id + "?include=invoiceitems,invoicepayments",
+        paymoApi + "/invoices/" + invoice_id + "?include=invoiceitems,invoicepayments,invoiceitems.entries",
         {
             auth: {
                 user: email,
@@ -190,10 +190,10 @@ var checkInvoiceForPreviousFees = function(invoice_id) {
             var lastSeq = 0;
             var mDueDate = moment(invoice.due_date);
             var mFeeDate = moment(mDueDate).add(1, "days"); // Fee date is 1 day after invoice's due date. From there it is monthly.
+            logger.debug("going over invoice payments for invoice: " + invoice.id);
             if (!(typeof invoice.invoicepayments !== 'undefined' && invoice.invoicepayments.length > 0)) {
                 logger.debug("invoice payments: NO INVOICE PAYMENTS FOUND");
             } else {
-                logger.debug("going over invoice payments for invoice: " + invoice.id);
                 logger.debug("invoice payments: ", invoice.invoicepayments);
                 logger.debug("adding up invoice payments");
                 var payments = 0;
@@ -211,14 +211,9 @@ var checkInvoiceForPreviousFees = function(invoice_id) {
             var mfcCount = 0;
             logger.debug("counting monthly finance charges items");
             invoice.invoiceitems.forEach(function(item, index) {
-                // Add previous items as new items.
-                var newItem = { 
-                     "item": item.item,
-                     "description": item.description,
-                     "price_unit": item.price_unit,
-                     "quantity": item.quantity,
-                     "seq": (lastSeq = index + 1)
-                }
+                var newItem = {
+                        "id": item.id
+                };
                 newInvoiceItems[index] = newItem;
                 logger.debug("------------------");
                 logger.debug("item : ", (index + 1));
